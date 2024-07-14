@@ -1,0 +1,201 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* RESET */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Navbar Styles */
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logoLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 10px;
+  animation: borderColorChange 5s infinite; /* Adjust animation duration as needed */
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.logoLink:hover {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+  padding: 10px;
+  border: 2px solid; /* Default border to show before animation starts */
+  border-color: #FBBF24; /* Initial border color (yellow-500) */
+  animation: borderColorChange 5s infinite; /* Adjust animation duration as needed */
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.logoText {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 0.25rem;
+  animation: textColorChange 4s infinite; /* Add text color animation */
+}
+
+.logoText1 {
+  color: #f5c637;
+}
+
+.logoText2 {
+  color: #117ec1;
+}
+
+.logoText3 {
+  color: #b92026;
+}
+
+/* Animation for border color change */
+@keyframes borderColorChange {
+  0% {
+    border-color: #FBBF24; /* yellow-500 */
+  }
+  33% {
+    border-color: #3B82F6; /* blue-500 */
+  }
+  66% {
+    border-color: #EF4444; /* red-500 */
+  }
+  100% {
+    border-color: #FBBF24; /* yellow-500 */
+  }
+}
+
+/* Button Styles */
+.iteratingBorderButton {
+  background-color: transparent;
+  color: white;
+  padding: 0.5rem 1rem;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in-out;
+}
+.iteratingBorderButton:hover {
+  background-color: transparent;
+  border: 2px solid;
+  color: white;
+  padding: 0.5rem 1rem;
+  animation: borderColorChange 4s infinite;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@layer components {
+  .preferenceBtn {
+    @apply relative rounded px-3 py-1.5 font-medium items-center transition-all focus:outline-none inline-flex  ml-auto p-1 mr-2 hover:bg-dark-fill-3;
+  }
+
+  .preferenceBtn-tooltip {
+    @apply absolute w-auto p-2 text-sm m-2  min-w-max translate-x-3  right-0 top-5 z-10 rounded-md shadow-md
+    text-dark-layer-2 bg-gray-200  origin-center scale-0 transition-all duration-100 ease-linear group-hover:scale-100;
+  }
+}
+
+/* dark  scrollbar */
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: #282828;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4d4d4d;
+}
+
+/* CODE EDITOR */
+.cm-scroller,
+.cm-gutters {
+  background-color: #282828 !important;
+}
+.cm-focused {
+  outline: none !important;
+}
+
+.split {
+  display: flex;
+  flex-direction: row;
+}
+
+.gutter {
+  background-color: rgb(26, 26, 26);
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+.gutter:hover {
+  background-color: #0a84ff;
+}
+
+.gutter.gutter-horizontal {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==");
+  cursor: col-resize;
+}
+
+.gutter.gutter-vertical {
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAFAQMAAABo7865AAAABlBMVEVHcEzMzMzyAv2sAAAAAXRSTlMAQObYZgAAABBJREFUeF5jOAMEEAIEEFwAn3kMwcB6I2AAAAAASUVORK5CYII=");
+  cursor: row-resize;
+}
+
+code {
+  border-radius: 5px;
+  border-width: 1px;
+  font-family: sans-serif;
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1rem;
+  padding: 0.125rem;
+  letter-spacing: 1px;
+  white-space: pre-wrap;
+  background-color: hsla(0, 0%, 100%, 0.07);
+  border-color: rgba(247, 250, 255, 0.12);
+  color: rgba(239, 241, 246, 0.75);
+}
+
+.example-card pre {
+  background-color: rgba(2, 94, 107);
+  border-radius: 0.5rem;
+  color: rgba(239, 241, 246, 0.75);
+  font-size: 0.98rem;
+  line-height: 1.25rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  white-space: pre-wrap;
+}
+.example-card pre strong {
+  color: white;
+  font-size: 1rem;
+}
+
+.faang {
+  display: flex;
+  justify-content: center;
+  margin-top: 30vh;
+}
+.faangtext {
+  width: 45%;
+  display: table-row;
+  font-size: 1.8rem;
+  color: white;
+  margin-top: 30vh;
+}
+.faangpic {
+  width: 45%;
+  user-select: none; /* Disable text selection */
+}
+
+
+.bg-repeat {
+  background-image: repeat;
+}
