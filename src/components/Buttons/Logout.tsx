@@ -5,6 +5,7 @@ import { FiLogOut } from "react-icons/fi";
 
 const Logout: React.FC = () => {
 	const [signOut, loading, error] = useSignOut(auth);
+	const a = 5;
 
 	const handleLogout = () => {
 		signOut();
